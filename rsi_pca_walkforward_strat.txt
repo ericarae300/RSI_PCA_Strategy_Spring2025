@@ -1,0 +1,12 @@
+1. clean and format data to datetime
+2. Calculate rsi for periods 2-20 using calculate_rsi() function in functions.py. Output dataframe of all rsis indexed by date. 
+3. Plot heatmap of correlations:
+    Ideally want low correlations between lookback periods to ensure components in PCA are uncorrelated. If lookback periods are highly correlated this could mean 
+    that the periods carry simialr information and are not adding much value to the model individually. Want to identify which periods give the most distinct 
+    signals. 
+4. conduct_pca() function: Standardize RSI columns, from sklearn.preprocessing import StandardScaler, from sklearn.decomposition import PCA, apply PCA and store 
+    PCs into a df, calc and return the explained variance ratio for each PC. 
+5. create a linear combination of weights for the first two PCs and a combined PC column in the pca_df. 
+6. use the walk_forward_pca() function to iterate through training and test data using the strategy: buy when combined pca is > 0 AND RSI < 30, sell when combined 
+    pca < 0 AND RSI > 70. Determine what proportion of the test signals were correct when compared to the actual historical price differences. 
+7. 
